@@ -5,8 +5,7 @@
  * regarding copyright ownership.  The ASF licenses this file
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
+ * with the License.  You may obtain a copy of the License at *
  *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing,
@@ -21,13 +20,13 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-const projectName = "Template";
-const mainRepoName = "apache-website-template";
-const siteRepoName = "apache-website-template";
+const projectName = "GraphAr";
+const mainRepoName = "incubator-graphar";
+const siteRepoName = "incubator-graphar-website";
 
 const config: Config = {
-  title: `Apache ${projectName}`,
-  tagline: `Welcome to Apache ${projectName}!`,
+  title: `Apache ${projectName} (incubating)`,
+  tagline: `An open source, standard data file format for graph data storage and retrieval`,
   favicon: 'img/favicon.ico',
 
   url: `https://${projectName.toLowerCase()}.apache.org/`,
@@ -125,7 +124,40 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [],
+      // TODO: Replace with your project's social links
+      links: [
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Mailing list',
+              href: 'https://lists.apache.org/list.html?dev@graphar.apache.org',
+            },
+          ],
+        },
+        {
+          title: 'Docs',
+          items: [
+          ],
+        },
+        {
+          title: 'Repositories',
+          items: [
+            {
+              label: 'GraphAr',
+              href: 'https://github.com/apache/incubator-graphar',
+            },
+            {
+              label: 'Website',
+              href: 'https://github.com/apache/incubator-fury-site',
+            },
+            {
+              label: 'Testing',
+              href: 'https://github.com/apache/incubator-graphar-testing',
+            },
+          ],
+        },
+      ],
       logo: {
         width: 200,
         src: "/img/apache-incubator.svg",

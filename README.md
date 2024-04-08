@@ -1,36 +1,17 @@
-# Apache Website Template
+# Apache GraphAr (incubating) Website
 
-This project contains a template website that aims to follow all the various required Apache Website Policies.
+This project contains a static website for Apache GraphAr (incubating).
 
-This template was generated using [Docusaurus](https://docusaurus.io/).
 
-## Usage
+### Local Development
 
-You can directly copy from the root path of this template repository to your website repository.
-
-> [!NOTE]
-> TODO: Integrate it with [template support of Docusaurus](https://docusaurus.io/docs/api/misc/create-docusaurus#git-strategy).
-
-Most of the configurations are inherited from Docusaurus https://docusaurus.io/docs/configuration.
-
-Specificly, our template defines a few metadata fields to customize for every project:
-
-```typescript
-const projectName = "Template";
-const mainRepoName = "apache-website-template";
-const siteRepoName = "apache-website-template";
+```
+$ npm start
 ```
 
-For example, Apache Fury can customize these fields as:
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-```typescript
-const projectName = "Fury";
-const mainRepoName = "incubator-fury";
-const siteRepoName = "incubator-fury-site";
-```
 
-More placeholders and preset are under developed.
+## LICENSE
 
-## Deploy
-
-This template contains [a GitHub Actions workflow](.github/workflows/deploy.yml) to deploy the generated website content to the `asf-site` branch. It would work automatically, without any other ections required.
+[Apache License 2.0](./LICENSE).

@@ -46,11 +46,10 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Multi-languages library',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Support popular programming languages such as Java, Python, C++, Scala library to read and write GraphAr files.
       </>
     ),
   },

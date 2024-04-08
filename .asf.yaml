@@ -16,14 +16,14 @@
 # under the License.
 
 github:
-  description: "Apache Website Template"
-  homepage: https://foo.apache.org/
+  description: Apache GraphAr Website
+  homepage: https://grapahr.apache.org/
   features:
     issues: true
     projects: false
     wiki: false
   labels:
-    - website
+    - graphar
   enabled_merge_buttons:
     squash:  true
     merge:   false
