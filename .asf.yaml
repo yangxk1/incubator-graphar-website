@@ -17,7 +17,7 @@
 
 github:
   description: Apache GraphAr Website
-  homepage: https://grapahr.apache.org/
+  homepage: https://graphar.apache.org/
   features:
     issues: true
     projects: false
