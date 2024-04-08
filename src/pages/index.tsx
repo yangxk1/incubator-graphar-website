@@ -37,8 +37,16 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="https://github.com/apache/incubator-graphar">
+            to="https://github.com/apache/incubator-graphar"
+            style={{ marginRight: '50px' }} // Add margin to the right
+            >
             GitHub
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/"
+          >
+            Documentation
           </Link>
         </div>
       </div>

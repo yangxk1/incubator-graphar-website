@@ -15,8 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 
-tison:
-  name: tison
-  title: Apache Member
-  url: https://github.com/tisonkun
-  image_url: https://github.com/tisonkun.png
+acezen:
+  name: Weibin Zeng 
+  title: Maintainer of GraphAr
+  url: https://github.com/acezen
+  image_url: https://github.com/acezen.png

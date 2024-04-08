@@ -74,7 +74,7 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        {type: 'docSidebar', sidebarId: 'docs', position: 'right', label: 'Docs'},
+        {type: 'docSidebar', sidebarId: 'documentation', position: 'right', label: 'Documentation'},
         {to: '/blog', label: 'Blog', position: 'right'},
         {
           type: 'dropdown',

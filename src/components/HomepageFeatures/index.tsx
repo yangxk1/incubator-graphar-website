@@ -28,28 +28,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Efficient format design',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        GraphAr is designed to be efficient for both storage and querying, with a focus on 
+        large-scale graph data and efficient storage and retrieval.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Out-of-core queries',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Designed for out-of-core scenarios, enabling the storage and querying of large-scale
+        graphs outside of memory, such as in data lakes.
       </>
     ),
   },
   {
-    title: 'Multi-languages library',
+    title: 'Cross-language support',
     description: (
       <>
-        Support popular programming languages such as Java, Python, C++, Scala library to read and write GraphAr files.
+        Provides libraries in C++, Java, Scala with Spark, and Python with PySpark for
+        generating, accessing, and transforming files in GraphAr format.
       </>
     ),
   },
