@@ -31,8 +31,8 @@ const FeatureList: FeatureItem[] = [
     title: 'Efficient format design',
     description: (
       <>
-        GraphAr is designed to be efficient for both storage and querying, with a focus on 
-        large-scale graph data and efficient storage and retrieval.
+        GraphAr is designed to be efficient for storage and retrieval of large-scale graph data with techniques
+        such as chunking, columnar storage, and maintain CSR/CSC semantics.
       </>
     ),
   },
