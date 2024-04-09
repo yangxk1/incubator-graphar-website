@@ -169,7 +169,7 @@ const config: Config = {
             },
             {
               label: 'Website',
-              href: 'https://github.com/apache/incubator-fury-site',
+              href: 'https://github.com/apache/incubator-graphar-website',
             },
             {
               label: 'Testing',
