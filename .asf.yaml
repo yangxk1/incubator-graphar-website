@@ -35,9 +35,9 @@ github:
 publish:
   whoami: asf-site
 
-# notifications:
-#   commits:      commits@foo.apache.org
-#   issues:       commits@foo.apache.org
-#   pullrequests: commits@foo.apache.org
-#   jobs:         commits@foo.apache.org
-#   discussions:  commits@foo.apache.org
+notifications:
+  commits:      commits@graphar.apache.org
+  issues:       commits@graphar.apache.org
+  pullrequests: commits@graphar.apache.org
+  jobs:         commits@graphar.apache.org
+  discussions:  commits@graphar.apache.org
