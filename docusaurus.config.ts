@@ -17,22 +17,20 @@
  * under the License.
  */
 
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-const projectName = "GraphAr";
-const mainRepoName = "incubator-graphar";
-const siteRepoName = "incubator-graphar-website";
+const projectName = 'GraphAr';
+const mainRepoName = 'incubator-graphar';
+const siteRepoName = 'incubator-graphar-website';
 
 const config: Config = {
-  title: `Apache ${projectName} (incubating)`,
+  title: `Apache ${projectName}`,
   tagline: `An open source, standard data file format for graph data storage and retrieval`,
   favicon: 'img/favicon.ico',
-
   url: `https://${projectName.toLowerCase()}.apache.org/`,
   baseUrl: '/',
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
 
@@ -74,8 +72,13 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        {type: 'docSidebar', sidebarId: 'documentation', position: 'right', label: 'Documentation'},
-        {to: '/blog', label: 'Blog', position: 'right'},
+        {
+          type: 'docSidebar',
+          sidebarId: 'documentation',
+          position: 'right',
+          label: 'Documentation',
+        },
+        { to: '/blog', label: 'Blog', position: 'right' },
         {
           type: 'dropdown',
           label: 'ASF',
@@ -83,37 +86,37 @@ const config: Config = {
           items: [
             {
               label: 'Foundation',
-              to: 'https://www.apache.org/'
+              to: 'https://www.apache.org/',
             },
             {
               label: 'License',
-              to: 'https://www.apache.org/licenses/'
+              to: 'https://www.apache.org/licenses/',
             },
             {
               label: 'Events',
-              to: 'https://www.apache.org/events/current-event.html'
+              to: 'https://www.apache.org/events/current-event.html',
             },
             {
               label: 'Privacy',
-              to: 'https://privacy.apache.org/policies/privacy-policy-public.html'
+              to: 'https://privacy.apache.org/policies/privacy-policy-public.html',
             },
             {
               label: 'Security',
-              to: 'https://www.apache.org/security/'
+              to: 'https://www.apache.org/security/',
             },
             {
               label: 'Sponsorship',
-              to: 'https://www.apache.org/foundation/sponsorship.html'
+              to: 'https://www.apache.org/foundation/sponsorship.html',
             },
             {
               label: 'Thanks',
-              to: 'https://www.apache.org/foundation/thanks.html'
+              to: 'https://www.apache.org/foundation/thanks.html',
             },
             {
               label: 'Code of Conduct',
-              to: 'https://www.apache.org/foundation/policies/conduct.html'
-            }
-          ]
+              to: 'https://www.apache.org/foundation/policies/conduct.html',
+            },
+          ],
         },
         {
           href: `https://github.com/apache/${mainRepoName}`,
@@ -177,9 +180,9 @@ const config: Config = {
       ],
       logo: {
         width: 200,
-        src: "/img/apache-incubator.svg",
-        href: "https://incubator.apache.org/",
-        alt: "Apache Incubator logo"
+        src: '/img/apache-incubator.svg',
+        href: 'https://incubator.apache.org/',
+        alt: 'Apache Incubator logo',
       },
       copyright: `<div>
       <p>

@@ -22,44 +22,50 @@ import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 type FeatureItem = {
+  Svg: string;
   title: string;
-  description: JSX.Element;
+  description: React.ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Efficient format design',
+    Svg: require('@site/static/img/banner/design.svg').default,
     description: (
       <>
-        GraphAr is designed to be efficient for storage and retrieval of large-scale graph data with techniques
-        such as chunking, columnar storage, and maintain CSR/CSC semantics.
+        GraphAr is designed to be efficient for storage and retrieval of large-scale graph data with techniques such as
+        chunking, columnar storage, and maintain CSR/CSC semantics.
       </>
     ),
   },
   {
     title: 'Out-of-core queries',
+    Svg: require('@site/static/img/banner/search.svg').default,
     description: (
       <>
-        Designed for out-of-core scenarios, enabling the storage and querying of large-scale
-        graphs outside of memory, such as in data lakes.
+        Designed for out-of-core scenarios, enabling the storage and querying of large-scale graphs outside of memory,
+        such as in data lakes.
       </>
     ),
   },
   {
     title: 'Cross-language support',
+    Svg: require('@site/static/img/banner/language.svg').default,
     description: (
       <>
-        Provides libraries in C++, Java, Scala with Spark, and Python with PySpark for
-        generating, accessing, and transforming files in GraphAr format.
+        Provides libraries in C++, Java, Scala with Spark, and Python with PySpark for generating, accessing, and
+        transforming files in GraphAr format.
       </>
     ),
   },
 ];
 
-function Feature({title, description}: FeatureItem) {
+function Feature({ title, description, Svg }: FeatureItem) {
+  console.log('icon', Svg);
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center padding-horiz--md">
+        <div> {<Svg role="img" className={styles.featureSvg} />}</div>
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
       </div>
