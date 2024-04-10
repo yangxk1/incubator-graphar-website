@@ -49,6 +49,7 @@ const config: Config = {
         docs: {
           sidebarPath: './docs/sidebars.ts',
           editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+          exclude: ['**/README.md'],
         },
         blog: {
           blogSidebarCount: 'ALL',
@@ -60,6 +61,19 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  plugins: [
+    [
+      'content-docs',
+      {
+        id: 'community',
+        path: 'community',
+        routeBasePath: 'community',
+        sidebarPath: require.resolve('./community/sidebars.ts'),
+        editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+      },
     ],
   ],
 
@@ -77,6 +91,13 @@ const config: Config = {
           sidebarId: 'documentation',
           position: 'right',
           label: 'Documentation',
+        },
+        {
+          type: 'doc',
+          docId: 'community',
+          position: 'right',
+          label: 'Community',
+          docsPluginId: 'community'
         },
         { to: '/blog', label: 'Blog', position: 'right' },
         {
