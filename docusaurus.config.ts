@@ -48,14 +48,14 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './docs/sidebars.ts',
-          editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+          editUrl: `https://github.com/apache/${mainRepoName}/edit/main/`,
           exclude: ['**/README.md'],
         },
         blog: {
           blogSidebarCount: 'ALL',
           blogSidebarTitle: 'All our posts',
           showReadingTime: true,
-          editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+          editUrl: `https://github.com/apache/${siteRepoName}/edit/main/`,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -72,7 +72,7 @@ const config: Config = {
         path: 'community',
         routeBasePath: 'community',
         sidebarPath: require.resolve('./community/sidebars.ts'),
-        editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+        editUrl: `https://github.com/apache/${siteRepoName}/edit/main/`,
       },
     ],
   ],
@@ -87,6 +87,11 @@ const config: Config = {
       },
       items: [
         {
+          position: 'right',
+          label: 'Format',
+          to: '/docs/specification/format'
+        },
+        {
           type: 'docSidebar',
           sidebarId: 'documentation',
           position: 'right',
@@ -98,6 +103,28 @@ const config: Config = {
           position: 'right',
           label: 'Community',
           docsPluginId: 'community'
+        },
+        {
+          position: 'right',
+          label: 'API Reference',
+          items: [
+            {
+              label: 'C++ Library',
+              to: 'pathname:///docs/cpp/'
+            },
+            {
+              label: 'Java Library',
+              to: 'pathname:///docs/java/'
+            },
+            {
+              label: 'Spark Library',
+              to: 'pathname:///docs/spark/'
+            },
+            {
+              label: 'PySpark Library',
+              to: 'pathname:///docs/pyspark/'
+            },
+          ]
         },
         { to: '/blog', label: 'Blog', position: 'right' },
         {
@@ -174,10 +201,6 @@ const config: Config = {
             {
               label: 'Format',
               to: '/docs/specification/format',
-            },
-            {
-              label: 'Contributing',
-              to: '/docs/developers',
             },
           ],
         },

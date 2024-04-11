@@ -27,15 +27,37 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 18.x
+
       - uses: pnpm/action-setup@v2
         with:
           version: 8
-      - run: pnpm install
-      - run: pnpm run build
-      - run: cp .asf.yaml build/.asf.yaml
+
+      - name: Check out the incubator-graphar repository
+        uses: actions/checkout@v4
+        with:
+          repository: apache/incubator-graphar
+          path: incubator-graphar
+          ref: main
+          depth: 1
+
+      - name: Syncing the docs folder and remove incubator-graphar
+        run: |
+          # Note: DO NOT omit the trailing slash in the source directory
+          rsync -av incubator-graphar/docs/ docs/
+          rm -rf incubator-graphar
+
+      - name: Install dependencies
+        run: pnpm install
+  
+      - name: Build
+        run: |
+          pnpm run build
+          cp .asf.yaml build/.asf.yaml
+
       - uses: peaceiris/actions-gh-pages@v3
         if: github.event_name != 'pull_request'
         with:

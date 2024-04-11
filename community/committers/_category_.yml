@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-position: 1
+position: 2
 label: 'Committers'
 collapsible: true
 collapsed: false
