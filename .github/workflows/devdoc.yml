@@ -1,0 +1,77 @@
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+
+name: Update dev docs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 0 * * *'
+
+jobs:
+  devdocs:
+    name: Fetch and update dev docs
+    if: github.repository == 'apache/incubator-graphar-website'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Check out the incubator-graphar repository
+        uses: actions/checkout@v4
+        with:
+          repository: apache/incubator-graphar
+          path: incubator-graphar
+          ref: main
+          depth: 1
+
+      - name: Syncing the docs folder and remove incubator-graphar
+        run: |
+          rsync -av incubator-graphar/docs/ docs/
+          rm -rf incubator-graphar
+
+      - name: Install dependencies
+        run: pnpm install
+ 
+      - name: Build
+        run: | 
+          pnpm run build
+          cp .asf.yaml build/.asf.yaml
+
+      - name: Check if build has changed
+        id: check_changes
+        run: |
+          git fetch origin asf-site
+          - name: Check if build has changed
+            id: check_changes
+            run: |
+              git diff --quiet origin/asf-site build/ || echo "::set-output name=changes::true"
+
+      - name: Deploy if changes
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ steps.check_changes.outputs.changes == 'true' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: asf-site
