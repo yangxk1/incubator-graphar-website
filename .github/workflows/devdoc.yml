@@ -63,10 +63,7 @@ jobs:
         id: check_changes
         run: |
           git fetch origin asf-site
-          - name: Check if build has changed
-            id: check_changes
-            run: |
-              git diff --quiet origin/asf-site build/ || echo "::set-output name=changes::true"
+          git diff --quiet origin/asf-site build/ || echo "::set-output name=changes::true"
 
       - name: Deploy if changes
         uses: peaceiris/actions-gh-pages@v3
