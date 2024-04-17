@@ -23,8 +23,121 @@ on:
   pull_request:
 
 jobs:
+  build-cpp-doc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: apache/incubator-graphar
+          ref: main
+
+      - name: Install dependencies
+        run: sudo apt-get install -y doxygen 
+
+      - name: Build Cpp docs
+        working-directory: cpp
+        run: |
+          mkdir build
+          cd build
+          cmake -DBUILD_DOCS_ONLY=ON ..
+          make docs
+
+      - name: Upload docs
+        uses: actions/upload-artifact@v3
+        with:
+          name: cpp-docs
+          path: ./cpp/build/docs_doxygen/html
+
+  build-java-doc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: apache/incubator-graphar
+          ref: main
+
+      - name: Install dependencies
+        run: |
+          # install the latest arrow deb to test arrow
+          wget -c https://apache.jfrog.io/artifactory/arrow/"$(lsb_release --id --short | tr 'A-Z' 'a-z')"/apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb \
+            -P /tmp/
+          sudo apt-get install -y /tmp/apache-arrow-apt-source-latest-"$(lsb_release --codename --short)".deb
+          sudo apt-get update -y
+          # TODO: ISSUE-241
+          sudo apt install -y libarrow-dev=14.0.1-1 \
+                            libarrow-dataset-dev=14.0.1-1 \
+                            libarrow-acero-dev=14.0.1-1 \
+                            libparquet-dev=14.0.1-1
+          sudo apt-get install libcurl4-openssl-dev -y
+          sudo apt-get install llvm-11 clang-11 lld-11 libclang-11-dev libz-dev -y
+
+      - name: Build Java docs
+        working-directory: java
+        run: |
+          export JAVA_HOME=${JAVA_HOME_11_X64}
+          mvn javadoc:javadoc
+
+      - name: Upload docs
+        uses: actions/upload-artifact@v3
+        with:
+          name: java-docs
+          path: ./java/target/site/apidocs
+  
+  build-spark-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: apache/incubator-graphar
+          ref: main
+
+      - name: Build Spark Docs
+        working-directory: spark
+        run: |
+          export JAVA_HOME=${JAVA_HOME_11_X64}
+          # FIXME: the install is not necessary, but it is a workaround for the issue
+          mvn clean install -DskipTests -Dspotless.check.skip=true
+          mvn scala:doc
+
+      - name: Upload docs
+        uses: actions/upload-artifact@v3
+        with:
+          name: spark-docs
+          path: ./spark/graphar/target/site/scaladocs
+
+  build-pyspark-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: apache/incubator-graphar
+          ref: main
+
+      - name: Install Poetry
+        working-directory: pyspark
+        run: |
+          yes | sudo python3 -m pip install poetry --quiet
+          poetry env use python3
+
+      - name: Build PySpark Docs
+        working-directory: pyspark
+        run: |
+          make install_docs
+          make docs
+
+      - name: Upload docs
+        uses: actions/upload-artifact@v3
+        with:
+          name: pyspark-docs
+          path: ./pyspark/docs
+
   deploy:
     runs-on: ubuntu-latest
+    needs:
+      - build-cpp-doc
+      - build-java-doc
+      - build-spark-docs
+      - build-pyspark-docs
     steps:
       - uses: actions/checkout@v4
 
@@ -42,13 +155,30 @@ jobs:
           repository: apache/incubator-graphar
           path: incubator-graphar
           ref: main
-          depth: 1
 
       - name: Syncing the docs folder and remove incubator-graphar
         run: |
           # Note: DO NOT omit the trailing slash in the source directory
           rsync -av incubator-graphar/docs/ docs/
           rm -rf incubator-graphar
+
+      - name: Download cpp docs
+        uses: actions/download-artifact@v3
+        with:
+          name: cpp-docs
+          path: ./static/docs/cpp
+
+      - name: Download spark docs
+        uses: actions/download-artifact@v3
+        with:
+          name: spark-docs
+          path: ./static/docs/spark
+
+      - name: Download pyspark docs
+        uses: actions/download-artifact@v3
+        with:
+          name: pyspark-docs
+          path: ./static/docs/pyspark
 
       - name: Install dependencies
         run: pnpm install

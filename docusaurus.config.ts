@@ -112,10 +112,11 @@ const config: Config = {
               label: 'C++ Library',
               to: 'pathname:///docs/cpp/'
             },
-            {
-              label: 'Java Library',
-              to: 'pathname:///docs/java/'
-            },
+            // TODO: Add Java library when it is available
+            // {
+            //   label: 'Java Library',
+            //  to: 'pathname:///docs/java/'
+            // },
             {
               label: 'Spark Library',
               to: 'pathname:///docs/spark/'
