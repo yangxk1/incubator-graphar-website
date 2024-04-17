@@ -110,7 +110,7 @@ const config: Config = {
           items: [
             {
               label: 'C++ Library',
-              to: 'pathname:///docs/cpp/'
+              to: 'pathname:///docs/cpp/index.html'
             },
             // TODO: Add Java library when it is available
             // {

@@ -32,7 +32,7 @@ jobs:
           ref: main
 
       - name: Install dependencies
-        run: sudo apt-get install -y doxygen 
+        run: sudo apt-get install -y doxygen
 
       - name: Build Cpp docs
         working-directory: cpp
