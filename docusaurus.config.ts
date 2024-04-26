@@ -127,6 +127,7 @@ const config: Config = {
             },
           ]
         },
+        { to: '/download', label: 'Download', position: 'right' },
         { to: '/blog', label: 'Blog', position: 'right' },
         {
           type: 'dropdown',
