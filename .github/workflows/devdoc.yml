@@ -72,7 +72,7 @@ jobs:
           sudo apt-get install llvm-11 clang-11 lld-11 libclang-11-dev libz-dev -y
 
       - name: Build Java docs
-        working-directory: java
+        working-directory: maven-projects/java
         run: |
           export JAVA_HOME=${JAVA_HOME_11_X64}
           mvn javadoc:javadoc
@@ -81,7 +81,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: java-docs
-          path: ./java/target/site/apidocs
+          path: ./maven-projects/java/target/site/apidocs
 
   build-spark-docs:
     runs-on: ubuntu-latest
@@ -92,7 +92,7 @@ jobs:
           ref: main
 
       - name: Build Spark Docs
-        working-directory: spark
+        working-directory: maven-projects/spark
         run: |
           export JAVA_HOME=${JAVA_HOME_11_X64}
           # FIXME: the install is not necessary, but it is a workaround for the issue
@@ -103,7 +103,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: spark-docs
-          path: ./spark/graphar/target/site/scaladocs
+          path: ./maven-projects/spark/graphar/target/site/scaladocs
 
   build-pyspark-docs:
     runs-on: ubuntu-latest
