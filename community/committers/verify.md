@@ -123,7 +123,7 @@ check as follows:
 
 You can refer to this article: [ASF Third Party License Policy](https://apache.org/legal/resolved.html)
 
-compile the source code: [Build HertzBeat Binary Package](https://hertzbeat.apache.org/docs/community/development/#build-hertzbeat-binary-package)
+compile the source code: [How to build GraphAr](https://graphar.apache.org/community/development)
 
 
 ## 3. Email reply

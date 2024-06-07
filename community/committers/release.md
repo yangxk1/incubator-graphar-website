@@ -444,7 +444,7 @@ git push origin ${graphar_version}
 ### Publish artifacts to SVN RELEASE branch
 
 ```shell
-svn mv https://dist.apache.org/repos/dist/dev/incubator/graphar/${release_version} https://dist.apache.org/repos/dist/release/incubator/graphar/${opendal_version} -m "Release ${opendal_version}"
+svn mv https://dist.apache.org/repos/dist/dev/incubator/graphar/${release_version} https://dist.apache.org/repos/dist/release/incubator/graphar/${graphar_version} -m "Release ${graphar_version}"
 ```
 
 ### Create a GitHub Release
