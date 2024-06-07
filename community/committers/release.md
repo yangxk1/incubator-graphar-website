@@ -43,15 +43,15 @@ Start a discussion about the next release via sending email to: dev@graphar.apac
 Title:
 
 ```
-[DISCUSS] Release Apache GraphAr (incubating) ${graphar_version}
+[DISCUSS] Release Apache GraphAr(incubating) ${graphar_version}
 ```
 
 Content:
 
 ```
-Hello, GraphAr Community,
+Hello, Apache GraphAr(incubating) Community,
 
-This is a call for a discussion to release Apache GraphAr (incubating) version ${graphar_version}.
+This is a call for a discussion to release Apache GraphAr(incubating) version ${graphar_version}.
 
 The change lists about this release:
 
@@ -125,10 +125,6 @@ Please note that this version is the exact version of the release, not the relea
 - cpp library: bump version in `cpp/CMakeLists.txt`
 - scala with spark library: bump version in `maven-projects/pom.xml`
 
-### Update docs
-
-- Update `CHANGELOG.md` with the new version and the changes.
-
 ### Push release candidate tag
 
 After bump version PR gets merged, we can create a GitHub release for the release candidate:
@@ -190,7 +186,7 @@ svn add ${release_version}
 # check svn status
 svn status
 # commit to SVN remote server
-svn commit -m "Prepare for ${release_version}"
+svn commit -m "Prepare for graphar ${release_version}"
 ```
 
 Visit https://dist.apache.org/repos/dist/dev/incubator/graphar/ to make sure the artifacts are uploaded correctly.
@@ -237,6 +233,10 @@ Git tag for the release:
 
 https://github.com/apache/incubator-graphar/releases/tag/v${release_version}
 
+The change lists about this release:
+
+https://github.com/apache/incubator-fury/compare/v0.11.4...v0.12.0-rc.1
+
 Please download, verify, and test.
 
 The VOTE will be open for at least 72 hours and until the necessary
@@ -262,14 +262,10 @@ More detailed checklist please refer to:
 
 https://cwiki.apache.org/confluence/display/INCUBATOR/Incubator+Release+Checklist
 
-Use our verify.py to assist in the verify process:
 
-svn co https://dist.apache.org/repos/dist/dev/incubator/graphar/${release_version}/ graphar-dev
-cd graphar-dev
-curl -sSL https://github.com/apache/incubator-graphar/raw/v${release_version}/scripts/verify.py -o verify.py
-python verify.py
+How to Build GraphAr, please refer to:
 
-How to Build:
+https://graphar.apache.org/community/development
 
 
 Thanks
@@ -337,8 +333,8 @@ The Apache GraphAr community has voted and approved the release of Apache
 GraphAr(incubating) ${release_version}. We now kindly request the IPMC members
 review and vote for this release.
 
- is a data access layer that allows users to easily and efficiently
-retrieve data from various storage services in a unified way.
+Apache GraphAr(incubating) is an open-source and language-independent data file format designed for
+efficient graph data storage and retrieval.
 
 GraphAr community vote thread:
 
@@ -384,11 +380,7 @@ More detailed checklist please refer to:
 https://github.com/apache/incubator-graphar/tree/main/scripts
 
 To compile from source, please refer to:
-https://github.com/apache/incubator-graphar/blob/main/CONTRIBUTING.md
-
-Here is python script in release to help you verify the release candidate:
-
-./scripts/verify.py
+https://graphar.apache.org/community/development
 
 Thanks
 

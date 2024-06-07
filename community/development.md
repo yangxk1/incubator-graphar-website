@@ -18,7 +18,7 @@ Building GraphAr C++ library requires:
   sufficient. For MacOS, at least clang 5 is required
 - CMake 3.5 or higher
 - On Linux and macOS, ``make`` build utilities
-- Apache Arrow C++ (>= 12.0.0, requires `arrow-dev`, `arrow-dataset`, `arrow-acero` and `parquet` modules) for Arrow filesystem support. You can refer to [Apache Arrow Installation](https://arrow.apache.org/install/) to install the required modules.
+- Apache Arrow C++ (>= 12.0.0, requires `arrow-dev`, `arrow-dataset`, `arrow-acero` and `parquet` modules). You can refer to [Apache Arrow Installation](https://arrow.apache.org/install/) to install the required modules.
 - [Catch2 v3](https://github.com/catchorg/Catch2) for unit testing if `BUILD_TESTS` is enabled
 - [Google Benchmark](https://github.com/google/benchmark) (>= 1.6.0) for benchmarking if `BUILD_BENCHMARKS` is enabled
 
@@ -43,5 +43,5 @@ Building requires:
 
 ```bash
 $ cd maven-projects/spark
-$ mvn clean -DskipTests
+$ mvn clean compile -DskipTests
 ```
