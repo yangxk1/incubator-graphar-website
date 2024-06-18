@@ -119,7 +119,7 @@ const config: Config = {
             // },
             {
               label: 'Spark Library',
-              to: 'pathname:///docs/spark/'
+              to: 'pathname:///docs/spark/org/apache/graphar/index.html'
             },
             {
               label: 'PySpark Library',
