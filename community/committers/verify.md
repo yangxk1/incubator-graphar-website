@@ -89,7 +89,7 @@ check result
 > If something like the following appears, it means the signature is correct. Keyword: **`Good signature`**
 
 ```shell
-apache-hertzbeat-xxx-incubating-src.tar.gz
+apache-graphar-xxx-incubating-src.tar.gz
 gpg: Signature made XXXX
 gpg: using RSA key XXXXX
 gpg: Good signature from "xxx @apache.org>"
