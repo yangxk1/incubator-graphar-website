@@ -428,7 +428,7 @@ We will proceed with publishing the approved artifacts and sending out the annou
 # Checkout the tags that passed VOTE
 git checkout ${release_version}
 # Tag with the graphar version
-git tag -s ${graphar_version}
+git tag -a ${graphar_version}
 # Push tags to GitHub to trigger releases
 git push origin ${graphar_version}
 ```
@@ -450,11 +450,9 @@ svn mv https://dist.apache.org/repos/dist/dev/incubator/graphar/${release_versio
 
 ### Send the announcement
 
-Send the release announcement to `dev@graphar.apache.org` and CC `announce@apache.org`.
+Send the release announcement to `dev@graphar.apache.org` and CC `general@incubator.apache.org`.
 
 > Tips: Please follow the [Committer Email](https://infra.apache.org/committer-email.html) guide to make sure you have already set up the email SMTP. Otherwise, your email cannot be sent to the announcement mailing list.
-
-Instead of adding breaking changes, let's include the new features as "notable changes" in the announcement.
 
 Title:
 
@@ -470,13 +468,8 @@ Hi all,
 The Apache GraphAr(incubating) community is pleased to announce
 that Apache GraphAr(incubating) ${graphar_version} has been released!
 
-GraphAr is a data access layer that allows users to easily and efficiently
-retrieve data from various storage services in a unified way.
-
-The notable changes since ${graphar_version} include:
-1. xxxxx
-2. yyyyyy
-3. zzzzzz
+GraphAr is An open source, standard data file format for graph data storage
+and retrieval.
 
 Please refer to the change log for the complete list of changes:
 https://github.com/apache/incubator-graphar/releases/tag/v${graphar_version}
