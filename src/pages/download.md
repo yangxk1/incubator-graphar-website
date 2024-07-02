@@ -4,7 +4,15 @@ The official Apache GraphAr (incubating) releases are provided as source artifac
 
 ## Releases
 
-Apache GraphAr (Incubating) hasn't made a release since joining the Apache Incubator.
+The latest source release is 0.12.0:
+
+| Version | Date | Source | Release Notes |
+|---------|------------|--------|---------------|
+| 0.12.0  |2024-07-02  | [apache-graphar-0.12.0-incubating-src.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/graphar/0.12.0/apache-graphar-0.12.0-incubating-src.tar.gz?action=download) ([asc](https://downloads.apache.org/incubator/graphar/0.12.0/apache-graphar-0.12.0-incubating-src.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/graphar/0.12.0/apache-graphar-0.12.0-incubating-src.tar.gz.sha512)) | [release notes](https://github.com/apache/incubator-graphar/releases/tag/v0.12.0) |
+
+## All archived releases
+
+For older releases, please check the [archive](https://archive.apache.org/dist/incubator/graphar/).
 
 ## Notes
 
