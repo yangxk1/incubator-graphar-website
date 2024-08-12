@@ -39,7 +39,7 @@ Hi, GraphAr PPMC,
  
  <Brief description and links of {Candidate_Full_Name}'s contributions>
 
-I think making him/her a ${committer or PPMC member} will be a recognition of his outstanding work for GraphAr. So, I am happy to call VOTE to accept ${Candidate_Full_Name} as an GraphAr ${committer or PPMC member}.
+I think making him/her a ${committer or PPMC member} will be a recognition of his outstanding work for GraphAr. So, I am happy to call VOTE to accept ${Candidate_Full_Name} as a GraphAr ${committer or PPMC member}.
  
 Voting will continue for at least 72 hours or until the required number of votes is reached.
 
@@ -55,7 +55,7 @@ Here are three links to his contributions to GraphAr:
 ```
 
 ## Feedback on voting results
-After the voting email is over, the initiator of the vote needs to `remind the voting end` in the second [VOTE] email; at the same time, the initiator of the vote needs to initiate a vote summary email, and the summary email is sent to private@inlong.apache.org.
+After the voting email is over, the initiator of the vote needs to `remind the voting end` in the second [VOTE] email; at the same time, the initiator of the vote needs to initiate a vote summary email, and the summary email is sent to private@graphar.apache.org.
 The following is a template  vote summary email:
 ```shell
 To: private@graphar.apache.org

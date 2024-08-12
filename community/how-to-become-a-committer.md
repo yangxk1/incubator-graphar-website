@@ -26,7 +26,7 @@ List of potential contributions (in no particular order):
 - Review issues on GitHub and maintain the latest status of issues, such as outdated closing issues, changing issue error information, etc.
 - Guide new contributors and be familiar with the community process.
 - Publish speeches and blogs about GraphAr, and add these to GraphAr's official website.
-- Any contribution that is beneficial to the development of the InLong community.
+- Any contribution that is beneficial to the development of the GraphAr community.
 - ......
 
 For more reference: [ASF official document](https://community.apache.org/contributors/)
