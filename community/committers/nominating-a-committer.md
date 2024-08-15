@@ -115,8 +115,8 @@ contributor, participating as you do now.
 This personal invitation is a chance for you to accept or decline in private.
 Please let us know in reply to this message whether you accept or decline.
 
-If you accept, you will need an Apache account (id) with privileges.
-Please follow these instructions.
+**If you accept, you will need an Apache account (id) with privileges.
+Please follow these instructions.**
 
 A. If you already have an ICLA on file:
 
