@@ -164,19 +164,19 @@ jobs:
           rm -rf incubator-graphar
 
       - name: Download cpp docs
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: cpp-docs
           path: ./static/docs/cpp
 
       - name: Download spark docs
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: spark-docs
           path: ./static/docs/spark
 
       - name: Download pyspark docs
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: pyspark-docs
           path: ./static/docs/pyspark
