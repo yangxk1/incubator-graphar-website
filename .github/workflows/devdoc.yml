@@ -24,7 +24,7 @@ on:
 
 jobs:
   build-cpp-doc:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -49,7 +49,7 @@ jobs:
           path: ./cpp/build/docs_doxygen/html
 
   build-java-doc:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -64,10 +64,10 @@ jobs:
           sudo apt-get install -y /tmp/apache-arrow-apt-source-latest-"$(lsb_release --codename --short)".deb
           sudo apt-get update -y
           # TODO: ISSUE-241
-          sudo apt install -y libarrow-dev=14.0.1-1 \
-                            libarrow-dataset-dev=14.0.1-1 \
-                            libarrow-acero-dev=14.0.1-1 \
-                            libparquet-dev=14.0.1-1
+          sudo apt install -y libarrow-dev=17.0.0-1 \
+                              libarrow-dataset-dev=17.0.0-1 \
+                              libarrow-acero-dev=17.0.0-1 \
+                              libparquet-dev=17.0.0-1
           sudo apt-get install libcurl4-openssl-dev -y
           sudo apt-get install llvm-11 clang-11 lld-11 libclang-11-dev libz-dev -y
 
@@ -84,7 +84,7 @@ jobs:
           path: ./maven-projects/java/target/site/apidocs
 
   build-spark-docs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -106,7 +106,7 @@ jobs:
           path: ./maven-projects/spark/graphar/target/site/scaladocs
 
   build-pyspark-docs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -139,7 +139,7 @@ jobs:
       - build-spark-docs
       - build-pyspark-docs
     if: github.repository == 'apache/incubator-graphar-website'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 
