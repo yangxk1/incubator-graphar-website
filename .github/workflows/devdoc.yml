@@ -43,7 +43,7 @@ jobs:
           make docs
 
       - name: Upload docs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cpp-docs
           path: ./cpp/build/docs_doxygen/html
@@ -78,7 +78,7 @@ jobs:
           mvn javadoc:javadoc
 
       - name: Upload docs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: java-docs
           path: ./maven-projects/java/target/site/apidocs
@@ -100,7 +100,7 @@ jobs:
           mvn scala:doc
 
       - name: Upload docs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: spark-docs
           path: ./maven-projects/spark/graphar/target/site/scaladocs
@@ -126,7 +126,7 @@ jobs:
           make docs
 
       - name: Upload docs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pyspark-docs
           path: ./pyspark/docs
