@@ -25,7 +25,7 @@ on:
 
 jobs:
   build-cpp-doc:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,13 +44,13 @@ jobs:
           make docs
 
       - name: Upload docs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cpp-docs
           path: ./cpp/build/docs_doxygen/html
 
   build-java-doc:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -65,10 +65,10 @@ jobs:
           sudo apt-get install -y /tmp/apache-arrow-apt-source-latest-"$(lsb_release --codename --short)".deb
           sudo apt-get update -y
           # TODO: ISSUE-241
-          sudo apt install -y libarrow-dev=14.0.1-1 \
-                            libarrow-dataset-dev=14.0.1-1 \
-                            libarrow-acero-dev=14.0.1-1 \
-                            libparquet-dev=14.0.1-1
+          sudo apt install -y libarrow-dev=17.0.0-1 \
+                              libarrow-dataset-dev=17.0.0-1 \
+                              libarrow-acero-dev=17.0.0-1 \
+                              libparquet-dev=17.0.0-1
           sudo apt-get install libcurl4-openssl-dev -y
           sudo apt-get install llvm-11 clang-11 lld-11 libclang-11-dev libz-dev -y
 
@@ -79,13 +79,13 @@ jobs:
           mvn javadoc:javadoc
 
       - name: Upload docs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: java-docs
           path: ./maven-projects/java/target/site/apidocs
   
   build-spark-docs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -101,13 +101,13 @@ jobs:
           mvn scala:doc
 
       - name: Upload docs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: spark-docs
           path: ./maven-projects/spark/graphar/target/site/scaladocs
 
   build-pyspark-docs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -127,13 +127,13 @@ jobs:
           make docs
 
       - name: Upload docs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pyspark-docs
           path: ./pyspark/docs
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs:
       - build-cpp-doc
       - build-java-doc
@@ -164,19 +164,19 @@ jobs:
           rm -rf incubator-graphar
 
       - name: Download cpp docs
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: cpp-docs
           path: ./static/docs/cpp
 
       - name: Download spark docs
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: spark-docs
           path: ./static/docs/spark
 
       - name: Download pyspark docs
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: pyspark-docs
           path: ./static/docs/pyspark
