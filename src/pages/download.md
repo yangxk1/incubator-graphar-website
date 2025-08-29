@@ -9,6 +9,7 @@ The latest source release is 0.12.0:
 | Version | Date | Source | Release Notes |
 |---------|------------|--------|---------------|
 | 0.12.0  |2024-07-02  | [apache-graphar-0.12.0-incubating-src.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/graphar/0.12.0/apache-graphar-0.12.0-incubating-src.tar.gz?action=download) ([asc](https://downloads.apache.org/incubator/graphar/0.12.0/apache-graphar-0.12.0-incubating-src.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/graphar/0.12.0/apache-graphar-0.12.0-incubating-src.tar.gz.sha512)) | [release notes](https://github.com/apache/incubator-graphar/releases/tag/v0.12.0) |
+| 0.13.0  |2025-08-29  | [apache-graphar-0.13.0-incubating-src.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/graphar/0.13.0/apache-graphar-0.13.0-incubating-src.tar.gz?action=download) ([asc](https://downloads.apache.org/incubator/graphar/0.13.0/apache-graphar-0.13.0-incubating-src.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/graphar/0.13.0/apache-graphar-0.13.0-incubating-src.tar.gz.sha512)) | [release notes](https://github.com/apache/incubator-graphar/releases/tag/v0.13.0) |
 
 ## All archived releases
 
