@@ -4,12 +4,12 @@ The official Apache GraphAr (incubating) releases are provided as source artifac
 
 ## Releases
 
-The latest source release is 0.12.0:
+The latest source release is 0.13.0:
 
 | Version | Date | Source | Release Notes |
 |---------|------------|--------|---------------|
-| 0.12.0  |2024-07-02  | [apache-graphar-0.12.0-incubating-src.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/graphar/0.12.0/apache-graphar-0.12.0-incubating-src.tar.gz?action=download) ([asc](https://downloads.apache.org/incubator/graphar/0.12.0/apache-graphar-0.12.0-incubating-src.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/graphar/0.12.0/apache-graphar-0.12.0-incubating-src.tar.gz.sha512)) | [release notes](https://github.com/apache/incubator-graphar/releases/tag/v0.12.0) |
 | 0.13.0  |2025-08-29  | [apache-graphar-0.13.0-incubating-src.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/graphar/0.13.0/apache-graphar-0.13.0-incubating-src.tar.gz?action=download) ([asc](https://downloads.apache.org/incubator/graphar/0.13.0/apache-graphar-0.13.0-incubating-src.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/graphar/0.13.0/apache-graphar-0.13.0-incubating-src.tar.gz.sha512)) | [release notes](https://github.com/apache/incubator-graphar/releases/tag/v0.13.0) |
+| 0.12.0  |2024-07-02  | [apache-graphar-0.12.0-incubating-src.tar.gz](https://www.apache.org/dyn/closer.lua/incubator/graphar/0.12.0/apache-graphar-0.12.0-incubating-src.tar.gz?action=download) ([asc](https://downloads.apache.org/incubator/graphar/0.12.0/apache-graphar-0.12.0-incubating-src.tar.gz.asc), [sha512](https://downloads.apache.org/incubator/graphar/0.12.0/apache-graphar-0.12.0-incubating-src.tar.gz.sha512)) | [release notes](https://github.com/apache/incubator-graphar/releases/tag/v0.12.0) |
 
 ## All archived releases
 
@@ -19,7 +19,7 @@ For older releases, please check the [archive](https://archive.apache.org/dist/i
 
 * When downloading a release, please verify the OpenPGP compatible signature (or failing that, check the SHA-512); these should be fetched from the main Apache site.
 * The KEYS file contains the public keys used for signing release. It is recommended that (when possible) a web of trust is used to confirm the identity of these keys.
-* Please download the [KEYS](https://downloads.apache.org/graphar/KEYS) as well as the .asc signature files.
+* Please download the [KEYS](https://downloads.apache.org/incubator/graphar/KEYS) as well as the .asc signature files.
 
 ### To verify the signature of the release artifact
 
