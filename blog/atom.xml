@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://graphar.apache.org/blog</id>
+    <title>Apache GraphAr Blog</title>
+    <updated>2024-04-08T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://graphar.apache.org/blog"/>
+    <subtitle>Apache GraphAr Blog</subtitle>
+    <icon>https://graphar.apache.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Welcome to GraphAr]]></title>
+        <id>https://graphar.apache.org/blog/demo-blog-post</id>
+        <link href="https://graphar.apache.org/blog/demo-blog-post"/>
+        <updated>2024-04-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Welcome to the GraphAr Blog! The blog about GraphAr will come soon. Stay tuned!]]></summary>
+        <content type="html"><![CDATA[<p>Welcome to the GraphAr Blog! The blog about GraphAr will come soon. Stay tuned!</p>]]></content>
+        <author>
+            <name>Weibin Zeng</name>
+            <uri>https://github.com/acezen</uri>
+        </author>
+        <category label="graphar" term="graphar"/>
+    </entry>
+</feed>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Apache GraphAr Blog</title>
+        <link>https://graphar.apache.org/blog</link>
+        <description>Apache GraphAr Blog</description>
+        <lastBuildDate>Mon, 08 Apr 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Welcome to GraphAr]]></title>
+            <link>https://graphar.apache.org/blog/demo-blog-post</link>
+            <guid>https://graphar.apache.org/blog/demo-blog-post</guid>
+            <pubDate>Mon, 08 Apr 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Welcome to the GraphAr Blog! The blog about GraphAr will come soon. Stay tuned!]]></description>
+            <content:encoded><![CDATA[<p>Welcome to the GraphAr Blog! The blog about GraphAr will come soon. Stay tuned!</p>]]></content:encoded>
+            <category>graphar</category>
+        </item>
+    </channel>
+</rss>
