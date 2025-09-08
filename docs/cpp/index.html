@@ -106,11 +106,6 @@ System setup</h2>
 <div class="line">sudo apt-get update</div>
 <div class="line">sudo apt-get install -y libarrow-dev libarrow-dataset-dev libarrow-acero-dev libparquet-dev</div>
 </div><!-- fragment --><p>On macOS, you can use <a href="https://brew.sh">Homebrew</a> to install the required packages: </p><div class="fragment"><div class="line">brew update &amp;&amp; brew bundle --file=cpp/Brewfile</div>
-</div><!-- fragment --><p> and run the following command to install the Arrow 20.0.0_1 C++ libraries: </p><div class="fragment"><div class="line">git clone https://github.com/Homebrew/homebrew-core.git --depth 1 </div>
-<div class="line">cd homebrew-core</div>
-<div class="line">git fetch origin b76848f98196f6dd9d3c4e6f71d030da84d22ce8</div>
-<div class="line">git checkout b76848f98196f6dd9d3c4e6f71d030da84d22ce8</div>
-<div class="line">brew install ./Formula/a/apache-arrow.rb</div>
 </div><!-- fragment --><blockquote class="doxtable">
 <p>[!NOTE] Currently, the Arrow C++ library has <a href="https://github.com/Homebrew/homebrew-core/blob/4588359b7248b07379094de5310ee7ff89afa17e/Formula/a/apache-arrow.rb#L53">disabled ARROW_ORC</a> in the brew formula, so you need to build and install the Arrow C++ library manually (with <code>-DARROW_ORC=True</code>). </p>
 </blockquote>
