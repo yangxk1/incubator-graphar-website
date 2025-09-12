@@ -57,6 +57,18 @@ jobs:
           repository: apache/incubator-graphar
           ref: main
 
+      - name: Build Java-info docs
+        working-directory: maven-projects/info
+        run: |
+          export JAVA_HOME=${JAVA_HOME_11_X64}
+          mvn javadoc:javadoc
+
+      - name: Upload docs
+        uses: actions/upload-artifact@v4
+        with:
+          name: java-info-docs
+          path: ./maven-projects/info/target/site/apidocs
+
       - name: Install dependencies
         run: |
           # install the latest arrow deb to test arrow
@@ -72,7 +84,7 @@ jobs:
           sudo apt-get install libcurl4-openssl-dev -y
           sudo apt-get install llvm-11 clang-11 lld-11 libclang-11-dev libz-dev -y
 
-      - name: Build Java docs
+      - name: Build Java-FFI docs
         working-directory: maven-projects/java
         run: |
           export JAVA_HOME=${JAVA_HOME_11_X64}
@@ -81,9 +93,9 @@ jobs:
       - name: Upload docs
         uses: actions/upload-artifact@v4
         with:
-          name: java-docs
+          name: java-ffi-docs
           path: ./maven-projects/java/target/site/apidocs
-  
+
   build-spark-docs:
     runs-on: ubuntu-22.04
     steps:
@@ -168,6 +180,18 @@ jobs:
         with:
           name: cpp-docs
           path: ./static/docs/cpp
+
+      - name: Download java-ffi docs
+        uses: actions/download-artifact@v4
+        with:
+          name: java-ffi-docs
+          path: ./static/docs/java-ffi
+
+      - name: Download java-info docs
+        uses: actions/download-artifact@v4
+        with:
+          name: java-info-docs
+          path: ./static/docs/java-info
 
       - name: Download spark docs
         uses: actions/download-artifact@v4
